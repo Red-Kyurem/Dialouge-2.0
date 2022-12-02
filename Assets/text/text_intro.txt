@@ -1,0 +1,20 @@
+
+<name=Tutorial><speed=0.025>hello there!<pause=1.5> press F12 to advance dialog!
+this text has no effect on it!
+this text has an *italicized effect*!
+this text has a @bolded effect@!
+this text has an _underline effect_!
+this text has a ~strikethrough effect~!
+//
+//this text line is skipped over!
+//
+<speed=0.25>this text will fill in slowly!
+<speed=0.01>this text will appear incredibly fast!
+<speed=0.02>this text will appear fast and then <speed=0.5>very slowly!
+<speed=0.5>press F12 <speed=0.6>to zoom through these long lines of text!
+this text will be paused<pause=2.5> for two and a half seconds!
+<name=Craig>this is Craig's text!
+//this text line is also skipped over!
+<name=You> now I'm putting words in your mouth!
+<name=Tutorial> using the backslash (otherwise known as an exit character (\\)), special characters such as these (\* \@ \_ \~ \\) can be used!
+that's it lol

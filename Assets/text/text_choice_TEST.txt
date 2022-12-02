@@ -1,0 +1,105 @@
+<\BUBBLE>START
+<name=Tutorial>Hello there! What would you like to learn about this system?<choice>
+[[Writing Dialouge|<\BUBBLE>DialogSection]]
+[[Time Based Events|<\BUBBLE>TimeSection]]
+[[Using Special Characters|<\BUBBLE>SpecialCharSection]]
+[[Twine Oddities|<\BUBBLE>BadTwineSection]]
+//
+<\BUBBLE>TeachItalic
+Text can be italicized when an asterisk (\*) is used in a sentence. use \* again to stop the italicizing.
+Italicizing will automagically be turned off once a new line is started.
+[[Return|<\BUBBLE>DialogSection]]
+//
+<\BUBBLE>TeachUnderLine
+Text can be underlined when an underscore (\_) is used in a sentence. use \_ again to stop the underline.
+Underlines will automagically be turned off once a new line is started.
+[[Return|<\BUBBLE>DialogSection]]
+//
+<\BUBBLE>TeachStrikeThrough
+Text can have a strikethrough when an tilde (\~) is used in a sentence. use \~ again to stop the strikethrough.
+Strikethroughs will automagically be turned off once a new line is started.
+[[Return|<\BUBBLE>DialogSection]]
+//
+<\BUBBLE>TeachTextSpeed
+The rate that the text can appear at can be sped up or slowed down using \<speed=[seconds]>, where [seconds] can be any floating point number.
+Text speed will NOT be changed when a new line is started.
+Example: <speed=0.25>this text will fill in slowly!<speed=0.0> Now it fills in super quickly!
+[[Return|<\BUBBLE>TimeSection]]
+//
+<\BUBBLE>TeachTextPause
+The text that appears can be paused using \<pause=[seconds]>, where [seconds] can be any floating point number.
+Example: this text will be paused<pause=2.5> for two and a half seconds!
+[[Return|<\BUBBLE>TimeSection]]
+//
+<\BUBBLE>TeachChangeName
+the name that displays in the text box can be changed using \<name=[name]>, where [name] is the name of the character you want to use.
+it is best to use it at the start of a sentence. Otherwise the name textbox will update mid-sentence.
+<name=You>Example: I can put words in your mouth!
+[[Return|<\BUBBLE>DialogSection]]
+//
+<\BUBBLE>TeachChoice
+A choice can be given to the player by using \<choice>, and then inserting two or more links to other passages directly below \<choice>.
+you must also set these choices to have human-readable names. you can do this the same as you would in Twine (like this: -->\[[Return|<\BUBBLE>START]]).
+Example: do you understand how to create choices? <choice>
+[[Yes!|<\BUBBLE>SpecialCharSection]]
+[[No...|<\BUBBLE>TeachChoice]]
+//
+<\BUBBLE>TeachExitCharacter
+an exit character (\\) can be used to write special characters such as these (\* \@ \_ \~ \\) without causing any effects to happen
+Example: using \\\_ will not make underline the text, but not using the exit character _will make the text underlined.
+[[Return|<\BUBBLE>SpecialCharSection]]
+//
+<\BUBBLE>TeachComments
+similar to commenting out code in C#, text can be commented out using two slashes (//), but ONLY at the beginning of the line! (othwise it won't work)
+comments are useful as it can add spacing between passages if you're reading it from the proofing copy.
+[[Return|<\BUBBLE>SpecialCharSection]]
+//
+<\BUBBLE>TeachBold
+Text can be bolded when an atsign (\@) is used in a sentence. use \@ again to stop the bolding.
+Bolding will automagically be turned off once a new line is started.
+[[Return|<\BUBBLE>DialogSection]]
+//
+<\BUBBLE>TeachPassage
+While a passage can be created normally in Twine, it needs to have <\BUBBLE> preceeding the passage's name so that Unity can search for it easily.
+(yes it's named BUBBLE and not PASSAGE, I didnt bother changing it b/c I fugured it'd be easier just to tell you than change 57 lines of code to now say PASSAGE)
+...just know that bubbles are the same as passages.
+[[Return|<\BUBBLE>BadTwineSection]]
+//
+<\BUBBLE>DialogSection
+<name=Tutorial>What would you like to learn about Dailouge?<choice>
+[[Italicizing|<\BUBBLE>TeachItalic]]
+[[Bolding|<\BUBBLE>TeachBold]]
+[[Underlining|<\BUBBLE>TeachUnderLine]]
+[[Strikethroughs|<\BUBBLE>TeachStrikeThrough]]
+[[Changing the Name of Who's Speaking|<\BUBBLE>TeachChangeName]]
+[[To Beginning|<\BUBBLE>START]]
+//
+<\BUBBLE>TimeSection
+what do you want to learn about Time Based Stuff? <choice>
+[[Changing the Text Speed|<\BUBBLE>TeachTextSpeed]]
+[[Pausing the Text|<\BUBBLE>TeachTextPause]]
+[[To Beginning|<\BUBBLE>START]]
+//
+<\BUBBLE>BadTwineSection
+What do you want to learn about Twine implementation?<choice>
+[[Copying Heading Text|<\BUBBLE>TeachCopyHeading]]
+[[Preventing New Lines in Twine|<\BUBBLE>TeachPreventNL]]
+[[Creating a Passage|<\BUBBLE>TeachPassage]]
+[[To Beginning|<\BUBBLE>START]]
+//
+<\BUBBLE>TeachPreventNL
+Twine will automatically create a new line when text overflows onto the next line (pushing the text both visibly and literally onto the next line).
+This can be solved by rescaling the "printout".
+[[<\BUBBLE>BadTwineSection]]
+//
+<\BUBBLE>SpecialCharSection
+what do you want to learn about the special characters?<choice>
+[[Implementing Choice|<\BUBBLE>TeachChoice]]
+[[Special Characters|<\BUBBLE>TeachExitCharacter]]
+[[Comments|<\BUBBLE>TeachComments]]
+[[To Beginning|<\BUBBLE>START]]
+//
+<\BUBBLE>TeachCopyHeading
+When copying text from the proofing copy, the headings of each bubble/passage will not copy along with it.
+This can be solved by fake printing it, as both the text and the headings in the viewing box can be selected!
+[[Return|<\BUBBLE>BadTwineSection]]
